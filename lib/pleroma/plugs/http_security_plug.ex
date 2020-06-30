@@ -67,7 +67,7 @@ defmodule Pleroma.Plugs.HTTPSecurityPlug do
     report_uri = Config.get([:http_security, :report_uri])
 
     img_src = "img-src 'self' data: blob:"
-    media_src = "media-src 'self'"
+    media_src = "media-src 'self' data:"
 
     {img_src, media_src} =
       if Config.get([:media_proxy, :enabled]) &&
